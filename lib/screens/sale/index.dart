@@ -3,6 +3,7 @@ import 'package:mobile/widgets/app_bar.dart';
 import 'package:mobile/model/sale_model.dart';
 import 'package:mobile/widgets/input_container.dart';
 
+
 const List<Tab> tabs = <Tab>[Tab(text: "Info"), Tab(text: "Product")];
 List<FacebookPage> _facebookPages = [
   FacebookPage(id: '001', name: 'Page 1'),

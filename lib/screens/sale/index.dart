@@ -56,7 +56,8 @@ class _SaleScreenState extends State<SaleScreen> {
   String? _tmpSelectedProduct;
   String? _deliveryValue;
   dynamic tmpDelivery;
-
+  String h = "";
+  String h1 = "";
   @override
   void initState() {
     super.initState();
@@ -139,24 +140,22 @@ class _SaleScreenState extends State<SaleScreen> {
                               onChanged: (String? val) {
                                 setState(() {
                                   _deliveryValue = val!;
+                                  print(val);
                                 });
-                                tmpDelivery = _deliveries.where(
-                                    (element) => element.id == _deliveryValue);
-                                print(tmpDelivery);
+                                tmpDelivery = _deliveries
+                                    .where((delivery) =>
+                                        delivery.id == _deliveryValue)
+                                    .toList();
                               },
                             ),
                           ),
                           InputContainer(
-                            label: "Delivery Price",
-                            input: TextFormField(
-                              initialValue: "a",
-                              readOnly: true,
-                            ),
-                          ),
+                              label: "Delivery Price",
+                              input: Text("${tmpDelivery[0].deliveryPrice}")),
                           InputContainer(
                             label: "Delivery Mobile Phone",
-                            input: TextFormField(),
-                          )
+                            input: Text("${tmpDelivery[0].phonenumber}"),
+                          ),
                         ],
                         crossAxisAlignment: CrossAxisAlignment.start,
                       ),

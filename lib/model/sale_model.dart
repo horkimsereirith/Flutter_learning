@@ -12,6 +12,15 @@ class Delivery {
     this.deliveryPrice,
     this.phonenumber,
   });
+
+  String toString() {
+    return 'Delivery: {id: ${id}, name: ${name}, price: ${deliveryPrice}, phonenumber: ${phonenumber}}';
+  }
+  double? get getPrice => deliveryPrice;
+  String? get getphnumber => "$phonenumber";
+  
+
+  
 }
 
 class Product {
